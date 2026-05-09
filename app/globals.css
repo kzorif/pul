@@ -1,27 +1,67 @@
+@import "tw-animate-css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: oklch(12% 0.02 60);
+    --foreground: oklch(95% 0.01 75);
+    --card: oklch(16% 0.02 60);
+    --card-foreground: oklch(95% 0.01 75);
+    --popover: oklch(16% 0.02 60);
+    --popover-foreground: oklch(95% 0.01 75);
+    --primary: oklch(72% 0.12 75);
+    --primary-foreground: oklch(12% 0.02 60);
+    --secondary: oklch(20% 0.02 60);
+    --secondary-foreground: oklch(95% 0.01 75);
+    --muted: oklch(18% 0.02 60);
+    --muted-foreground: oklch(95% 0.01 75 / 62%);
+    --accent: oklch(20% 0.02 60);
+    --accent-foreground: oklch(95% 0.01 75);
+    --destructive: oklch(60% 0.2 25);
+    --destructive-foreground: oklch(95% 0.01 75);
+    --border: oklch(95% 0.01 75 / 10%);
+    --input: oklch(95% 0.01 75 / 15%);
+    --ring: oklch(72% 0.12 75);
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    background-color: oklch(12% 0.02 60);
+    color: oklch(95% 0.01 75);
+    min-height: 100dvh;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .urdu {
+    font-family: var(--font-noto-nastaliq), serif;
+    direction: rtl;
+    unicode-bidi: plaintext;
+    font-size: 1.5rem;
+    line-height: 2;
+    letter-spacing: 0;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
   }
 }

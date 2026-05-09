@@ -1,0 +1,12 @@
+{
+  "name": "Pul — Learn Urdu Script",
+  "short_name": "پل",
+  "description": "Bridge to Urdu script, one character at a time",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0c0a",
+  "theme_color": "#c8a96e",
+  "icons": [
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
